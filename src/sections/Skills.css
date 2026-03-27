@@ -1,0 +1,93 @@
+.skills-section {
+  background: rgba(17, 34, 64, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+/* --- Skill Card --- */
+.skill-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(100, 255, 218, 0.08);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition), opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.visible .skill-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card:hover {
+  border-color: var(--teal-border);
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-hover), 0 0 25px rgba(100, 255, 218, 0.05);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+}
+
+.skill-emoji { font-size: 1.5rem; }
+
+.skill-card-header h3 {
+  font-size: 1.1rem;
+  color: var(--white-bright);
+  font-weight: 600;
+}
+
+/* --- Skill Bars --- */
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.skill-row { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--slate-light);
+}
+
+.skill-pct { font-weight: 600; font-size: 0.8rem; }
+
+.skill-track {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--teal) 0%, #00b4d8 100%);
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px rgba(100, 255, 218, 0.35);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .skills-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (min-width: 640px) and (max-width: 900px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}

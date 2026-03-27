@@ -1,0 +1,13 @@
+/* ============================================
+   Background Canvas
+   ============================================ */
+.global-background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--gradient-hero); /* Keep the deep navy gradient at the base */
+}
